@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: 24px;
+    color: #222;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#refresh-btn {
+    background-color: black;
+    color: white;
+}
+
+#yes-btn {
+    background-color: red;
+    color: white;
+}
+
+#no-btn {
+    background-color: gray;
+    color: white;
+}
+
+img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}

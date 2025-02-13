@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My YOTY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine’s Day YOTY!</h1>
+        <p>On this special day, I just want to remind you how grateful I am to have you in my life. You are the light that brightens my days and the warmth that fills my heart. Your love is the greatest gift life has given me, and every moment with you becomes an unforgettable memory.
+
+            I promise to always stand by your side, love you endlessly, and be the support you deserve. Happy Valentine’s Day, my love. Today and always, you are my heart and my forever.
+            
+            I love you more than words can say. Please forgive me. The only person I want is U ❤️</p>
+        
+        <!-- Image Slideshow -->
+        <img id="slideshow" src="img5.jpeg" alt="Special Message">
+        <button id="music-btn" onclick="toggleMusic()">Pause music</button>
+        <audio id="bg-music" autoplay loop>
+            <source src="mus1.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+    </div>
+
+    <script>
+        // List of images
+        const images = ["img5.jpeg", "img6.jpeg", "img1.jpeg" , "img2.jpeg" , "img3.jpeg" , "img4.jpeg "]; // Add more images here
+        let index = 0;
+
+        function changeImage() {
+            index = (index + 1) % images.length; // Loop through images
+            document.getElementById("slideshow").src = images[index];
+        }
+
+        // Change image every 2 seconds (2000ms)
+        setInterval(changeImage, 1000);
+        function toggleMusic() {
+            var music = document.getElementById("bg-music");
+            var button = document.getElementById("music-btn");
+            if (music.paused) {
+                music.play();
+                button.innerText = "Pause Music";
+            } else {
+                music.pause();
+                button.innerText = "Play Music";
+            }
+        }
+        window.onload = function () {
+            if (localStorage.getItem("playMusic") === "true") {
+                document.getElementById("bg-music").play();
+                localStorage.removeItem("playMusic"); // Remove flag after playing once
+            }
+        };
+        
+    </script>
+</body>
+</html>

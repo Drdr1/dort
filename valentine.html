@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine? ❤️</h1>
+        <button id="yes-btn">Yes! 🥰</button>
+        <button id="no-btn">No 😢</button>
+    </div>
+    <script>
+        // "Yes" button - Store flag and go to yes.html
+        document.getElementById("yes-btn").addEventListener("click", function() {
+            localStorage.setItem("playMusic", "true"); // Store flag for autoplay
+            window.location.href = "yes.html";
+        });
+
+        // "No" button - Moves when hovered
+        document.getElementById("no-btn").addEventListener("mouseover", function() {
+            let btn = document.getElementById("no-btn");
+            let randomX = Math.random() * (window.innerWidth - 100);
+            let randomY = Math.random() * (window.innerHeight - 50);
+            btn.style.position = "absolute";
+            btn.style.left = randomX + "px";
+            btn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
+
